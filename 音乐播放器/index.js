@@ -7,7 +7,7 @@ var oAudio=document.getElementById('audio'),
     timer,
     duration,
     allWidth=232;
-    oAudio.src="music/1.mp3";
+    oAudio.src="music/3.mp3";
 oAudio.onloadedmetadata=function (){
     console.log('hhh');
     duration=this.duration;
