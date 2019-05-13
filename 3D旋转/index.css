@@ -1,0 +1,81 @@
+.container{
+    perspective: 600px;
+    width: 300px;
+    height: 300px;
+    margin: 400px auto;
+    perspective-origin: bottom right;
+
+}
+.box{
+    position: relative;
+    /* border: 1px solid black; */
+    transform-style: preserve-3d;
+    /* perspective: 600px; */
+    width: 300px;
+    height: 300px;
+    transform: rotateX(90deg);
+    /* transform: rotate3d(1,1,1,45deg) translate3d(-75px,-75px,75px); */
+    /* animation: move 3s linear infinite; */
+}
+.item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    text-align:center;
+    color: aliceblue;
+    font-size: 100px;
+    line-height: 300px;
+    opacity: 0.8;
+    user-select: none;
+
+}
+.item:nth-child(1){
+    background-color: brown;
+    transform: rotateX(90deg) translateZ(150px) rotateZ(180deg);
+}
+.item:nth-child(2){
+    background-color:green;
+    transform: rotateX(-90deg) translateZ(150px);
+}
+.item:nth-child(3){
+    background-color:yellow;
+    transform: rotateY(90deg) translateZ(150px) rotateZ(-90deg);
+}
+.item:nth-child(4){
+    background-color:palevioletred;
+    transform: rotateY(-90deg) translateZ(150px) rotateZ(90deg);
+}
+.item:nth-child(5){
+    background-color:red;
+    transform: translateZ(-150px) rotateY(180deg);
+}
+.item:nth-child(6){
+    background-color:orange;
+    transform: translateZ(150px);
+}
+#btn{
+    position: absolute;
+    left: 0;
+    top:500px;
+}
+.start .box{
+     transform: rotate3d(1,1,1,45deg) translate3d(-75px,-75px,75px);
+    animation: move 2s linear infinite;
+    animation-play-state:running; 
+}
+.stop .box{
+    animation-play-state:paused;
+    transform: rotateX(90deg);
+
+     
+}
+@keyframes move{
+    0%{
+        transform: rotate3d(1,1,1,45deg) translate3d(-75px,-75px,75px) rotate3d(-1,-1,1,0deg) ;
+    }
+    100%{
+        transform: rotate3d(1,1,1,45deg) translate3d(-75px,-75px,75px) rotate3d(-1,-1,1,-360deg) ;
+    }
+}
