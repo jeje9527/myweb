@@ -36,7 +36,7 @@
     transform: rotateX(90deg) translateZ(150px) rotateZ(180deg);
 }
 .item:nth-child(2){
-    background-color:green;
+    background-color:black;
     transform: rotateX(-90deg) translateZ(150px);
 }
 .item:nth-child(3){
