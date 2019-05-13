@@ -1,0 +1,97 @@
+#scene{
+    position: relative;
+    height: 550px;
+    width: 750px;
+    background: url(bg.png);
+    user-select: none;
+   cursor: none;
+
+}
+#hammer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -49px;
+    margin-top: -38.5px;
+    user-select: none;
+    z-index: 999;
+}
+div[id^=hollow]{
+    position: absolute;
+    height: 102px;
+    width: 103px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+}
+#hollow1{
+    top:150px;
+    left: 140px;
+}
+#hollow2{
+    top:150px;
+    left: 330px;
+}
+#hollow3{
+    top:150px;
+    left: 530px;
+}
+#hollow4{
+    top:250px;
+    left: 115px;
+}
+#hollow5{
+    top:250px;
+    left: 330px;
+}
+#hollow6{
+    top:250px;
+    left: 530px;
+}
+#hollow7{
+    top:350px;
+    left: 105px;
+}
+#hollow8{
+    top:350px;
+    left: 330px;
+}
+#hollow9{
+    top:350px;
+    left: 550px;
+}
+div[id^=hollow] img{
+    position: absolute;
+    left: 0;
+    top:102px;
+    z-index: 888;
+}
+div[id^=input]{
+    position: absolute;
+    height: 22px;
+    width: 118px;
+    z-index: 777;
+    text-align: right;
+    font-size: 22px;
+}
+#input1{
+    left: 222px;
+    top:190px;
+  
+}
+#input2{
+    top: 190px;
+    left: 480px;
+}
+#result{
+    display: none;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 300Px;
+    height: 50px;
+    font-size: 20px;
+    margin-left: -150px;
+    background-color: orange;
+    margin-top: -50px;
+    border: 1px solid black;
+}
