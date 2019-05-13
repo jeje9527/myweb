@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QQ弹窗</title>
+</head>
+    <style>
+        body{
+            height: 1000px;
+            }
+        #img1{
+            position: fixed;
+            right: 15px;
+            width: 450px;
+            bottom: -254px;
+            }
+        #img2{
+            display: none;
+            position: fixed;
+            right: 15px;
+            bottom: 240px;
+            }
+    </style>
+<body>
+
+    <iframe src="http://www.qq.com" width="100%" height="100%" frameborder="0"></iframe>
+    <a href="javascript:;"><img id="img1" src="img/0.jpg" alt=""></a>
+    <img id="img2" src="img/close.jpg" alt="">
+
+    <script>
+        var img1=document.getElementById('img1');
+        var img2=document.getElementById('img2');
+        var nowTop=-254;
+        var endTop=0;
+        var speed=1;
+        function show(){
+            nowTop+=speed;
+            img1.style.bottom=nowTop+"px";
+            if(nowTop>=endTop){
+                img1.style.bottom=endTop+"px"
+                clearInterval(timer1);
+                img2.style.display="block";
+                }
+            }
+        function hidden(){
+            nowTop-=speed*4;
+            img1.style.bottom=nowTop+"px"; 
+            if (nowTop<-254){
+                clearInterval(timer2);
+                img1.style.display="none"
+            }   
+        }
+        var timer1=setInterval(show,1);
+        window.onload=timer1;
+        img2.onclick=function(){
+            img2.style.display="none";
+            timer2=setInterval(hidden,1);
+        
+        };
+    </script>
+</body>
+</html> 

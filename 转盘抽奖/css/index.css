@@ -1,0 +1,34 @@
+body,table{
+    margin: 10px auto;
+}
+td{
+    background-color: #666;
+    height: 100px;
+    width: 150px;
+    font-size: 50px;
+    text-align: center;
+    user-select: none;
+}
+.selected{
+    background-color: #F60;
+}
+#start{
+    text-align: center;
+    cursor: pointer;
+    font-size: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+#result{
+    position: absolute;
+    top:25px;
+    left: 50%;
+    margin-left: -150px;
+    height: 100px;
+    width: 300px;
+    font-size: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    background-color: red;
+    display: none;
+}

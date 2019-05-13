@@ -1,0 +1,39 @@
+.cleanfix::before,.cleanfix::after{
+    contain: "";
+    display: table;
+}
+.cleanfix::after{
+    clear: both;
+}
+#box div{
+    padding: 0 2px;
+}
+#left{
+    position: relative;
+    float: left;
+    width: 150px
+}
+#left img{
+    width: 150px;
+    z-index: 99;
+}
+#right{
+    float: left;
+    width: 465px;
+}
+#right img{
+    display: none;
+    width: 465px;
+}
+#right .show{
+    display: block;
+}
+#pointer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 8px;
+    margin: 0 0 0 5px;
+    width: 168px;
+    z-index: 100;
+}
