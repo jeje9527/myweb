@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮乐</title>
+    <style>
+        canvas{
+            /* background-image: url('jiang.jpg'); */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas width="400" height="400" id="myCanvas"></canvas>
+    <script>
+        var myCanvas=document.getElementById('myCanvas');
+        var ctx=myCanvas.getContext('2d');
+        var w=myCanvas.offsetWidth;
+        var h=myCanvas.offsetHeight;
+        function init(){
+            var img=new Image();
+            var random=Math.random();
+            if(random<0.5){
+                img.src="jiang.jpg";
+            }
+            else{
+                img.src="xie.jpg"
+
+            }
+            img.onload=function (){
+                myCanvas.style.backgroundImage='url('+img.src+')'
+            }
+
+             ctx.beginPath();
+             ctx.fillStyle="#aaa"
+             ctx.fillRect(0,0,w,h)
+
+             ctx.globalCompositeOperation    ="destination-out"
+             ctx.beginPath();
+             ctx.arc(100,100,30,0,Math.PI*2);
+             ctx.fill();
+        }   
+        init() ;    
+    </script>
+    
+</body>
+</html>
