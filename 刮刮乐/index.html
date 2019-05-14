@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>刮刮乐</title>
     <style>
+        div{
+            margin:20px auto;
+            display: flex;
+            max-width: 420px;
+        }
         canvas{
             /* background-image: url('jiang.jpg'); */
             background-repeat: no-repeat;
@@ -15,13 +20,15 @@
     </style>
 </head>
 <body>
-
+    <div>
     <canvas width="400" height="400" id="myCanvas"></canvas>
+    </div>
     <script>
         var myCanvas=document.getElementById('myCanvas');
         var ctx=myCanvas.getContext('2d');
         var w=myCanvas.offsetWidth;
         var h=myCanvas.offsetHeight;
+        console.log(myCanvas)
         function init(){
             var img=new Image();
             var random=Math.random();
@@ -30,22 +37,62 @@
             }
             else{
                 img.src="xie.jpg"
-
             }
             img.onload=function (){
-                myCanvas.style.backgroundImage='url('+img.src+')'
+                myCanvas.style.backgroundImage='url('+img.src+')';
+                myCanvas.addEventListener("mousedown",downFun);
             }
-
              ctx.beginPath();
              ctx.fillStyle="#aaa"
              ctx.fillRect(0,0,w,h)
 
-             ctx.globalCompositeOperation    ="destination-out"
              ctx.beginPath();
              ctx.arc(100,100,30,0,Math.PI*2);
              ctx.fill();
+             ctx.globalCompositeOperation    ="destination-out"
         }   
-        init() ;    
+        init() ;  
+        function downFun(e){ 
+            var lastX=e.clientX-myCanvas.offsetLeft,
+                lastY=e.clientY-myCanvas.offsetTop;
+                ctx.moveTo(lastX,lastY)
+                console.log(lastX+","+lastY)
+            myCanvas.addEventListener("mousemove",moveFun);
+            document.body.addEventListener("mouseup",upFun);
+        } 
+        function moveFun(e){
+            var x=e.clientX-myCanvas.offsetLeft,
+                y=e.clientY-myCanvas.offsetTop;
+                console.log(x+","+y)
+                ctx.beginPath()
+                // ctx.moveTo(lastX,lastY)
+                ctx.lineTo(x,y)
+                ctx.lineWidth=40;
+                ctx.lineCap='round';
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(x,y,40,0,Math.PI*2);
+                ctx.closePath();
+                ctx.fill();
+        } 
+        function clearCover(){
+            var imageData=ctx.getImageData(0,0,w,h);
+            var sum=0
+            for(var i=0;i<imageData.data.length;i+=4){
+                if(imageData.data[i]==0){
+                    sum++;
+                }
+            }
+            if(sum>w*h*0.7){
+                ctx.clearRect(0,0,w,h)
+            }
+        }  
+        function upFun(){
+            myCanvas.removeEventListener("mousemove",moveFun);
+            document.body.removeEventListener("mouseup",upFun);
+            clearCover();
+        }  
     </script>
     
 </body>
