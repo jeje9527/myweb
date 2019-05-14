@@ -135,3 +135,9 @@ body{
     background-color: #fff;
     border-radius:50%; 
 }
+@media only screen and (max-width:600px){
+    .tool i{
+        font-size: 15px;
+        line-height: 27px;
+    }
+}
