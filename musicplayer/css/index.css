@@ -60,21 +60,21 @@ body{
 .btn{
     position: absolute;
     left: 50px;
-    width: 30px;
-    height: 30px;
+    width: 5%;
+    height: 5%;
 }
 .progress{
     position: absolute;
     left: 50%;
-    margin-left: -200px;
-    width: 400px;
-    height: 30px;
+    margin-left: -33%;
+     width: 66%; /*400px */
+    height: 30px;  /*30px*/
 }
 .current-time,.all-time{
-    width: 80px;
-    height: 30px;
+    width: 20%;
+    height: 7.5%;
     color:#fff;
-    line-height: 30px;
+    line-height: 2em;
     user-select: none;
 }
 .current-time{
@@ -95,8 +95,8 @@ body{
 .pro-box{
     position: relative;
     display: inline-block;
-    width: 240px;
-    height: 30px;
+    width: 60%;
+    height: 7.5%;
 }
 .pro-bg,.pro-active{
     position: absolute;
