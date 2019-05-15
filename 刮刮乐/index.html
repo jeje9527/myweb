@@ -9,18 +9,26 @@
         div{
             margin:20px auto;
             display: flex;
-            max-width: 310px;
         }
+        
         canvas{
             /* background-image: url('jiang.jpg'); */
             background-repeat: no-repeat;
             background-position: center;
             background-size: 80%;
+            width: 300px;
+            height: 300px;
+        }
+        @media only screen and (min-width:980px){
+            div{
+                margin:20px auto;
+                width: 500px;
+            }
         }
     </style>
 </head>
 <body>
-    <div>
+    <div class="mobile">
     <canvas width="300" height="300" id="myCanvas"></canvas>
     </div>
     <script>
@@ -28,7 +36,9 @@
         var ctx=myCanvas.getContext('2d');
         var w=myCanvas.offsetWidth;
         var h=myCanvas.offsetHeight;
-        console.log(myCanvas)
+        myCanvas.ontouchend=function (e){
+            console.log(e)
+        }
         function init(){
             var img=new Image();
             var random=Math.random();
@@ -56,14 +66,13 @@
             var lastX=e.clientX-myCanvas.offsetLeft,
                 lastY=e.clientY-myCanvas.offsetTop;
                 ctx.moveTo(lastX,lastY)
-                console.log(lastX+","+lastY)
             myCanvas.addEventListener("mousemove",moveFun);
+
             document.body.addEventListener("mouseup",upFun);
         } 
         function moveFun(e){
             var x=e.clientX-myCanvas.offsetLeft,
                 y=e.clientY-myCanvas.offsetTop;
-                console.log(x+","+y)
                 ctx.beginPath()
                 // ctx.moveTo(lastX,lastY)
                 ctx.lineTo(x,y)
