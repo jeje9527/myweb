@@ -1,0 +1,32 @@
+body,ul,li,a{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.pageDiv{
+    text-align: center;
+    margin-top: 40px;
+}
+.pageDiv a,.pageDiv span{
+    display: inline-block;
+    width:36px;
+    height: 36px;
+    line-height: 36px;
+}
+.pageDiv a{
+    border: 1px solid #ccc;
+    margin: 0 5px;
+}
+.pageDiv span{
+    color: black;
+    font-weight: 500;
+    margin: 0 5 px ;
+}
+.pageDiv .prev,.pageDiv .next,.pageDiv .disable{
+    width: auto;
+    padding: 0 20px;
+}
+.pageDiv .disable{
+    color: #ccc;
+}

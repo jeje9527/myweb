@@ -4,6 +4,9 @@ body,ul,li,a,p{
     list-style: none;
     text-decoration: none;
 }
+body{
+    overflow-y: hidden;
+}
 nav{
    background-color: rgb(0,0,0,0.8);
 

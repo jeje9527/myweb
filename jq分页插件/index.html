@@ -6,8 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jq分页插件</title>
     <link rel="stylesheet" href="index.css">
+    
 </head>
 <body>
     
+    <div class="pageDiv">
+        <!-- <a href="javascript:;" class="disable"><上一页</a>
+        <a href="javascript:;">1</a>
+        <span class="omit">...</span>
+        <a href="javascript:;">3</a>
+        <a href="javascript:;">4</a>
+        <span class="active">5</span>
+        <a href="javascript:;">6</a>
+        <a href="javascript:;">7    </a>
+        <a href="javascript:;" class="next">下一页></a> -->
+    </div>
+    <script src="jquery-3.4.1.js"></script>
+
+    <script src="index.js"></script>
+    <script>
+        $('.pageDiv').paging(
+           { 
+            pageCount:28,
+            current:7
+        }
+        )
+    </script>
 </body>
 </html>
