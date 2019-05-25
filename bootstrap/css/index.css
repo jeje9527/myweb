@@ -199,3 +199,29 @@ margin-right: -6px;
         
     }
 }
+/* 底部footerd */
+footer{
+    color: #777;
+    padding: 30px 0;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 70px;
+}
+footer p , footer a{
+    font-size: 14px;
+    color: #777;
+
+}
+.footer-top{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.footer-top , .about > div h4{
+    color: #563d7c;
+    font-size: 16px;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
