@@ -1,0 +1,32 @@
+body,ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.clearfix::before , .clearfix::after{
+    content: "";
+    display: table;
+} 
+.wrapper{
+    text-align: center;
+}
+.clearfix::after{
+    clear: both;
+}
+.list{
+    display: inline-block;
+    width: 90%
+}
+.list li{
+    float: left;
+}
+.item{
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.item img{
+    display: block;
+    width: 220px;
+}

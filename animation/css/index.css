@@ -1,0 +1,82 @@
+body , ul , li p{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.container{
+    width: 1226px;
+    margin: 80px auto;
+}
+li{
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 355px;
+    margin: 0 20px;
+    border: 2px solid palevioletred;
+    border-radius: 10px;
+    overflow: hidden;
+}
+li>img{
+    display: block;
+    width: 200px;
+    transform: translateY(100%);
+    animation: show 0.6s linear forwards;
+}
+.wrapper{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 34px;
+    overflow: hidden;
+}
+.container li p{
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    display: block;
+    color: #fff;
+    background-color: rgb(0,0,0,0.5);
+    text-align: center;
+}
+.in-top , .out-top{
+    transform: translate(0,-200%);
+}
+.in-bottom , .out-bottom{
+    transform: translate(0,0);
+} 
+.in-right , .out-right{
+    transform: translate(100%,-100%);
+}   
+.in-left , .out-left{
+    transform: translate(-100%,-100%);
+}  
+.in-top, 
+.in-bottom,
+.in-right,
+.in-left{
+    animation: inDes 0.5s linear forwards;
+}
+.out-top ,
+.out-bottom,
+.out-left,
+.out-right{
+    animation: outDes 0.5s linear forwards;
+}
+@keyframes inDes{
+    100%{
+        transform: translate(0,-100%)
+    }
+}
+@keyframes outDes{
+    0%{
+        transform: translate(0,-100%)
+    }
+}
+@keyframes show{
+    100%{
+    transform: translateY(0)    
+
+    }
+}

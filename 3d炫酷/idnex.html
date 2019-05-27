@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d旋转</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+           <div class="div1">
+                <img src="img/1.jpg" alt="">
+                <img src="img/2.jpg" alt="">
+                <img src="img/3.jpg" alt="">
+                <img src="img/4.jpg" alt="">
+                <img src="img/5.jpg" alt="">
+            </div> 
+            <div class="div2">
+                    <img src="img/6.jpg" alt="">
+                    <img src="img/7.jpg" alt=" ">
+                    <img src="img/8.jpg" alt="">
+                    <img src="img/9.jpg" alt="">
+                </div>
+            <div class="div3">
+                    <img src="img/10.jpg" alt="">
+                    <img src="img/11.jpg" alt="">
+                    <img src="img/12.jpg" alt="">
+                    <img src="img/13.jpg" alt="">
+                </div>
+
+        </div>
+    </div>
+    <form id="choose">
+        <p>请选择旋转方式:</p>
+        <input type = "radio" name="r1" value="1" >一般旋转<br>
+        <input type = "radio" name="r1" value="2">天魔缭乱<br>
+        <input type = "radio" name="r1" value="3">夏祭跋转<br>
+    </div>
+    <script>
+        var input = document.getElementById('choose').getElementsByTagName('input'),
+            wrapper = document.getElementsByClassName('wrapper')[0];
+        for (var i=0; i<input.length;i++){
+           input[i].onclick = function(){
+               if(this.value == 1){
+                    wrapper.classList.remove('way2','way3')
+                    wrapper.classList.add('way1')
+               }
+               else if(this.value==2){
+                wrapper.classList.remove('way3')
+                wrapper.classList.add('way2','way1')
+               }
+               else if (this.value==3){
+                wrapper.classList.add('way3','way2','way1')
+               }
+           }
+        }      
+    </script>
+</body>
+</html>
