@@ -16,7 +16,7 @@
                 <img src="img/2.jpg" alt="">
                 <img src="img/3.jpg" alt="">
                 <img src="img/4.jpg" alt="">
-                <img src="img/5.jpg" alt="">
+                <img id="img" src="img/5.jpg" alt="">
             </div> 
             <div class="div2">
                     <img src="img/6.jpg" alt="">
@@ -34,14 +34,17 @@
         </div>
     </div>
     <form id="choose">
-        <p>请选择旋转方式:</p>
+        <p>温馨提示：<br>1、点击图片可以在中间显示哦<br>2、请选择旋转方式:</p>
         <input type = "radio" name="r1" value="1" >一般旋转<br>
         <input type = "radio" name="r1" value="2">天魔缭乱<br>
         <input type = "radio" name="r1" value="3">夏祭跋转<br>
     </div>
     <script>
         var input = document.getElementById('choose').getElementsByTagName('input'),
-            wrapper = document.getElementsByClassName('wrapper')[0];
+            wrapper = document.getElementsByClassName('wrapper')[0],
+            oImg = document.getElementsByTagName('img'),
+            img5 = document.getElementById('img');
+        //选旋转方式
         for (var i=0; i<input.length;i++){
            input[i].onclick = function(){
                if(this.value == 1){
@@ -56,7 +59,16 @@
                 wrapper.classList.add('way3','way2','way1')
                }
            }
-        }      
+        }  
+        //更换中间图片
+        for (var i=0;i<oImg.length;i++){
+            oImg[i].onclick=function (){
+                var text = (this.src).split('7/')[1],
+                    text5 = (img5.src).split('7/')[1];
+                    this.src=text5;
+                    img5.src=text;
+            }
+        }    
     </script>
 </body>
 </html>
