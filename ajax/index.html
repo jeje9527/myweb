@@ -5,10 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ajax</title>
-    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
 </head>
 <body>
-    <script src="index.js"> </script>
-    <script src="ajax.js"></script>
+    姓名：<input type="text">
+    年龄：<input type="text">
+    <button class="btn" type="submit">提交</button>
+    <ul class="box"></ul>
+    <script src="ajax2.js"></script>
+    <script>
+             btn = document.getElementsByTagName('button')[0];
+             btn.onclick = function (){
+                postCbs()
+             }
+       function postCbs() {
+           var  input1 = document.getElementsByTagName('input')[0],
+             input2 = document.getElementsByTagName('input')[1];
+             var value1 = input1.value,
+                 value2 = input2.value
+
+             var str = 'username='+value1+"&age="+value2;
+       }
+       function getCbs(val){
+              var oUl = document.getElementsByClassName('box')[0];
+                 var data=JSON.parse(val)
+                 var str='';
+                 data.forEach(function (ele, index){
+                     str+='<li>'+index+'、'+JSON.stringify(ele)+'</li>';
+                 })
+s
+                 oUl.innerHTML=str;
+        }
+    var a=ajax('GET','/data.json',getCbs,'',true);
+
+
+
+    </script>
 </body>
 </html>
