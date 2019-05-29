@@ -1,0 +1,14 @@
+
+{
+	"code":1,
+	"msg":"获取成功",
+	"data":{
+		"id":1,
+		"uid":358,
+		"name":"hhh",
+		"sex":"男",
+		"img":"1000",
+		"number":1003,
+		"allow_number":1
+	}
+}
