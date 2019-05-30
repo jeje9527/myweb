@@ -12,11 +12,16 @@
     年龄：<input type="text">
     <button class="btn" type="submit">提交</button>
     <ul class="box"></ul>
-    <script src="ajax2.js"></script>
+    <script src="js/ajax2.js"></script>
     <script>
              btn = document.getElementsByTagName('button')[0];
              btn.onclick = function (){
-                postCbs()
+                 data=postCbs()
+             ajax('POST','js/post.php',cb,data,true);
+             }
+            ajax('get','    data.json',getCbs,'',true)
+             function cb (val){
+                 console.log(val)
              }
        function postCbs() {
            var  input1 = document.getElementsByTagName('input')[0],
@@ -24,8 +29,9 @@
              var value1 = input1.value,
                  value2 = input2.value
 
-             var str = 'username='+value1+"&age="+value2;
+             return str = 'username='+value1+"&age="+value2;
        }
+
        function getCbs(val){
               var oUl = document.getElementsByClassName('box')[0];
                  var data=JSON.parse(val)
@@ -33,10 +39,11 @@
                  data.forEach(function (ele, index){
                      str+='<li>'+index+'、'+JSON.stringify(ele)+'</li>';
                  })
-s
+
                  oUl.innerHTML=str;
         }
-    var a=ajax('GET','/data.json',getCbs,'',true);
+    // var a=ajax('GET','/data.json',getCbs,true);
+    // console.log(a);
 
 
 
